@@ -11,6 +11,7 @@ try {
     $convite->id_grupo = $id_grupo;
     $convite->criar();
 
+    $_SESSION['msg'] = 'Convite Enviado';
     header("Location: /filminhos/views/detalhes_grupo.php?id_grupo=$id_grupo");
     exit();
 } catch (PDOException $e) {

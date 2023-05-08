@@ -8,6 +8,7 @@ try {
     $convite = new Convite($id_convite);
     $convite->deletar();
 
+    $_SESSION['msg'] = 'Convite Recusado';
     header("Location: /filminhos/views/perfil.php");
     exit();
 } catch (PDOException $e) {

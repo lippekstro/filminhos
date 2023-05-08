@@ -1,6 +1,6 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . "/filminhos/models/usuario.php";
-
+session_start();
 try {
     $nome = htmlspecialchars($_POST['nome']);
     $email = htmlspecialchars($_POST['email']);
@@ -20,6 +20,7 @@ try {
     }
     $usuario->criar();
 
+    $_SESSION['msg'] = 'Cadastro Feito com Sucesso';
     header("Location: /filminhos/views/login.php");
     exit();
 } catch (PDOException $e) {

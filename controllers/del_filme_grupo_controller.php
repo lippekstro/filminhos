@@ -9,6 +9,7 @@ try {
 
     $grupo_filme->deletar();
 
+    $_SESSION['msg'] = 'Filme Removido';
     header("Location: /filminhos/views/detalhes_grupo.php?id_grupo=$id_grupo");
     exit();
 } catch (Exception $e) {

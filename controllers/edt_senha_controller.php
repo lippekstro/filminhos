@@ -19,6 +19,7 @@ try {
         $usuario = new Usuario($id_usuario);
         $usuario->senha = $nova;
         $usuario->editaSenha();
+        $_SESSION['msg'] = 'Senha Modificada com Sucesso';
         header("Location: /filminhos/views/perfil.php");
         exit();
     } else {

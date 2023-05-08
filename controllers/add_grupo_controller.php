@@ -19,6 +19,7 @@ try {
         $usuario_grupo->id_usuario = $id_usuario;
         $usuario_grupo->criar();
         
+        $_SESSION['msg'] = 'Grupo Criado com Sucesso';
         header("Location: /filminhos/views/grupos.php");
         exit();
     } catch (PDOException $e) {

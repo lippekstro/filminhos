@@ -12,6 +12,7 @@ try {
     $usuario->email = $email;
     $usuario->editar();
 
+    $_SESSION['msg'] = 'Editado com Sucesso';
     header("Location: /filminhos/views/perfil.php");
     exit();
 } catch (PDOException $e) {

@@ -12,6 +12,7 @@ try {
     $grupo_filme->id_filme_api = $id_filme;
     $grupo_filme->criar();
 
+    $_SESSION['msg'] = 'Filme Adicionado com Sucesso';
     header("Location: /filminhos/views/detalhes_grupo.php?id_grupo=$id_grupo");
     exit();
 } catch (PDOException $e) {

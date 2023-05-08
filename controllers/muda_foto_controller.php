@@ -7,6 +7,7 @@ try {
     if (!empty($_FILES['foto']['tmp_name'])) {
         $imagem = file_get_contents($_FILES['foto']['tmp_name']);
     } else {
+        $_SESSION['msg'] = 'Foto Não Enviada';
         header("Location: /filminhos/views/perfil.php");
         exit();
     }
@@ -15,6 +16,7 @@ try {
     $usuario->foto = $imagem;
     $usuario->editaFoto();
 
+    $_SESSION['msg'] = 'Editado com Sucesso';
     header("Location: /filminhos/views/perfil.php");
     exit();
 } catch (PDOException $e) {

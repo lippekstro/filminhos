@@ -11,6 +11,7 @@ try {
     $convite->confirmaConvite($id_grupo, $id_usuario);
     $convite->deletar();
 
+    
     header("Location: /filminhos/views/perfil.php");
     exit();
 } catch (PDOException $e) {
