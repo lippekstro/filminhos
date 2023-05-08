@@ -36,3 +36,8 @@ $lang = LANG;
         </nav>
     </header>
     <main>
+        <?php if (isset($_SESSION['msg'])) : ?>
+            <div id="toast">
+                <?= $_SESSION['msg']; ?>
+            </div>
+        <?php endif; ?>

@@ -101,7 +101,8 @@ button:hover {
 }
 
 input,
-select, textarea {
+select,
+textarea {
     padding: 0.5rem;
     border-radius: 10px;
     margin: 0.5rem;
@@ -180,7 +181,8 @@ form {
     overflow: auto;
 }
 
-.container-fotos-perfil-card img, aside img {
+.container-fotos-perfil-card img,
+aside img {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
@@ -249,7 +251,7 @@ aside {
     align-items: center;
 }
 
-.alterar-img-perfil img{
+.alterar-img-perfil img {
     width: 20rem;
 }
 
@@ -257,7 +259,7 @@ aside {
     align-items: unset;
 }
 
-.perfil img{
+.perfil img {
     width: 20rem;
 }
 
@@ -267,13 +269,59 @@ aside {
     align-items: center;
 }
 
+#toast {
+    visibility: hidden;
+    width: 20rem;
+    padding: 1rem;
+    position: fixed;
+    top: 2rem;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 128, 0, 1);
+}
+
+#toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+        background-color: rgba(0, 128, 0, 0.5);
+    }
+
+    to {
+        top: 2rem;
+        opacity: 1;
+        background-color: rgba(0, 128, 0, 1);
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 2rem;
+        opacity: 1;
+        background-color: rgba(0, 128, 0, 1);
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+        background-color: rgba(0, 128, 0, 0.5);
+    }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .card {
         width: 15rem;
     }
 
-    .detalhes, .login {
+    .detalhes,
+    .login {
         width: unset;
     }
 
@@ -294,7 +342,8 @@ aside {
         width: 15rem;
     }
 
-    .detalhes, .login {
+    .detalhes,
+    .login {
         width: unset;
     }
 
@@ -341,7 +390,8 @@ aside {
         width: 15rem;
     }
 
-    .detalhes, .login {
+    .detalhes,
+    .login {
         width: 50%;
     }
 
@@ -362,7 +412,8 @@ aside {
         width: 15rem;
     }
 
-    .detalhes, .login {
+    .detalhes,
+    .login {
         width: 50%;
     }
 

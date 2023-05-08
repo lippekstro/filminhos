@@ -67,7 +67,8 @@ class Usuario
         $stmt->execute();
     }
 
-    public function editaFoto(){
+    public function editaFoto()
+    {
         $query = "UPDATE usuario SET foto = :foto WHERE id_usuario = :id_usuario";
         $conexao = Conexao::conectar();
         $stmt = $conexao->prepare($query);
@@ -76,7 +77,8 @@ class Usuario
         $stmt->execute();
     }
 
-    public function editaSenha(){
+    public function editaSenha()
+    {
         $query = "UPDATE usuario SET senha = :senha WHERE id_usuario = :id_usuario";
         $conexao = Conexao::conectar();
         $stmt = $conexao->prepare($query);
@@ -109,6 +111,8 @@ class Usuario
             $_SESSION['usuario']['id_usuario'] = $registro['id_usuario'];
             $_SESSION['usuario']['inicio'] = time();
             $_SESSION['usuario']['expira'] = 900;
+
+            $_SESSION['msg'] = 'Login com Sucesso';
             header("Location: /filminhos/index.php");
             exit();
         } else {
